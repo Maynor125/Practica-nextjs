@@ -14,7 +14,7 @@ function Navegator({pathNames}:Props) {
             </Link>))
         }
     </div>
-  )
+  )  
 }
 
 export default Navegator

@@ -1,6 +1,16 @@
 
 import { Inter } from 'next/font/google'
 import './tailwinGlobal.scss'
+import StyledComponentRegistry from './lib/registry'
+import { Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+  weight:['400','700'],
+  style:['normal','italic'],
+  subsets:['latin'],
+  variable:'--font-roboto',
+  display:'swap'
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head lang='esp' className={roboto.className} />
+      <body className={inter.className}>
+        <StyledComponentRegistry>
+               {children}
+        </StyledComponentRegistry>
+      </body>
     </html>
   )
 }
