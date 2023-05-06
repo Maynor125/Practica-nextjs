@@ -20,10 +20,10 @@ export function middleware(request:NextRequest) {
 
         const user ={
             name:"maynor rodriguez",
-            autenticated:false,
-        }
+            autenticated: process.env.NEXT_PUBLIC_AUTENTICATED ,
+        };
 
-        if(!user.autenticated)
+        if(user.autenticated !== "true")
         {
            return NextResponse.redirect(
                new URL("/login",request.url)
