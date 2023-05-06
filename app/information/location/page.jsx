@@ -3,7 +3,7 @@ import { getLocations } from "./services";
 import { Routes } from "@/models";
 
 async function fetchLocations() {
-    const response = await getLocations();
+    const response = getLocations();
     return response;
 }
 
